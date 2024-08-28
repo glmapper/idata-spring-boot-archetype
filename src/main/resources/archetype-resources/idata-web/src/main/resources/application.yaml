@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: ${artifactId}
+    ### 数据源配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/baseline?createDatabaseIfNotExist=true&useSSL=false&allowMultiQueries=true
+    username: xx
+    password: xx
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      # 连接池最大连接数
+      maximum-pool-size: 12
+      # 空闲时保持最小连接数
+      minimum-idle: 5
+      # 空闲连接存活时间
+      idle-timeout: 300000
+      # 连接超时时间
+      connection-timeout: 20000
+  jpa:
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8080
+logging:
+  file:
+    path: ./logs
+  level:
+    - ${groupId}: info
+#MyBatis扫描mapper文件配置
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
