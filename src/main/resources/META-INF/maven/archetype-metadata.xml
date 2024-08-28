@@ -1,22 +1,25 @@
-<archetype>
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor name="idata-spring-boot-archetype"
+                      xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="
+            http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0
+            http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd">
 
-    <!--属性变量定义-->
     <requiredProperties>
         <requiredProperty key="groupId">
-            <defaultValue>com.cn.idata</defaultValue>
+            <defaultValue>com.glmapper</defaultValue>
         </requiredProperty>
         <requiredProperty key="artifactId">
-            <defaultValue>idata-baselines</defaultValue>
+            <defaultValue>test</defaultValue>
         </requiredProperty>
         <requiredProperty key="package">
-            <defaultValue>com.cn.idata</defaultValue>
+            <defaultValue>com.glmapper</defaultValue>
         </requiredProperty>
     </requiredProperties>
 
-    <id>idata-spring-boot-archetype</id>
-
     <modules>
-        <module id="idata-web" dir="_idata_-web" name="idata-web">
+        <module id="${rootArtifactId}-common" name="${rootArtifactId}-common" dir="__${rootArtifactId}__-common">
             <fileSets>
                 <fileSet filtered="true" encoding="UTF-8" packaged="true">
                     <directory>src/main/java</directory>
@@ -44,8 +47,104 @@
                 </fileSet>
             </fileSets>
         </module>
-
-        <module id="idata-service" dir="_idata_-service" name="idata-service">
+        <module id="${rootArtifactId}-model" name="${rootArtifactId}-model" dir="__${rootArtifactId}__-model">
+            <fileSets>
+                <fileSet filtered="true" encoding="UTF-8" packaged="true">
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8" packaged="true">
+                    <directory>src/test/java</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+                <fileSet encoding="UTF-8">
+                    <directory>src/test/resources</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+        <module id="${rootArtifactId}-jpa" name="${rootArtifactId}-jpa" dir="__${rootArtifactId}__-jpa">
+            <fileSets>
+                <fileSet filtered="true" encoding="UTF-8" packaged="true">
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8" packaged="true">
+                    <directory>src/test/java</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                        <include>mapper</include>
+                    </includes>
+                </fileSet>
+                <fileSet encoding="UTF-8">
+                    <directory>src/test/resources</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+        <module id="${rootArtifactId}-mybatis" name="${rootArtifactId}-mybatis" dir="__${rootArtifactId}__-mybatis">
+            <fileSets>
+                <fileSet filtered="true" encoding="UTF-8" packaged="true">
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8" packaged="true">
+                    <directory>src/test/java</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+                <fileSet filtered="true" encoding="UTF-8">
+                    <directory>src/main/resources</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+                <fileSet encoding="UTF-8">
+                    <directory>src/test/resources</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+                <fileSet encoding="UTF-8">
+                    <directory>src/main/assembly</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+                <fileSet encoding="UTF-8">
+                    <directory>src/main/bin</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                </fileSet>
+            </fileSets>
+        </module>
+        <module id="${rootArtifactId}-service" name="${rootArtifactId}-service" dir="__${rootArtifactId}__-service">
             <fileSets>
                 <fileSet filtered="true" encoding="UTF-8" packaged="true">
                     <directory>src/main/java</directory>
@@ -73,9 +172,7 @@
                 </fileSet>
             </fileSets>
         </module>
-
-
-        <module id="idata-model" dir="_idata_-model" name="idata-model">
+        <module id="${rootArtifactId}-web" name="${rootArtifactId}-web" dir="__${rootArtifactId}__-web">
             <fileSets>
                 <fileSet filtered="true" encoding="UTF-8" packaged="true">
                     <directory>src/main/java</directory>
@@ -103,94 +200,5 @@
                 </fileSet>
             </fileSets>
         </module>
-
-        <module id="idata-common" dir="_idata_-common" name="idata-common">
-            <fileSets>
-                <fileSet filtered="true" encoding="UTF-8" packaged="true">
-                    <directory>src/main/java</directory>
-                    <includes>
-                        <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-                <fileSet filtered="true" encoding="UTF-8" packaged="true">
-                    <directory>src/test/java</directory>
-                    <includes>
-                        <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-                <fileSet encoding="UTF-8">
-                    <directory>src/main/resources</directory>
-                    <includes>
-                        <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-                <fileSet encoding="UTF-8">
-                    <directory>src/test/resources</directory>
-                    <includes>
-                        <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-            </fileSets>
-        </module>
-
-
-        <module id="idata-jpa" dir="_idata_-jpa" name="idata-jpa">
-            <fileSets>
-                <fileSet filtered="true" encoding="UTF-8" packaged="true">
-                    <directory>src/main/java</directory>
-                    <includes>
-                        <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-                <fileSet filtered="true" encoding="UTF-8" packaged="true">
-                    <directory>src/test/java</directory>
-                    <includes>
-                        <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-                <fileSet encoding="UTF-8">
-                    <directory>src/main/resources</directory>
-                    <includes>
-                        <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-                <fileSet encoding="UTF-8">
-                    <directory>src/test/resources</directory>
-                    <includes>f
-                        <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-            </fileSets>
-        </module>
-
-        <module id="idata-mybatis" dir="_idata_-mybatis" name="idata-mybatis">
-            <fileSets>
-                <fileSet filtered="true" encoding="UTF-8" packaged="true">
-                    <directory>src/main/java</directory>
-                    <includes>
-                        <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-                <fileSet filtered="true" encoding="UTF-8" packaged="true">
-                    <directory>src/test/java</directory>
-                    <includes>
-                        <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-                <fileSet encoding="UTF-8">
-                    <directory>src/main/resources</directory>
-                    <includes>
-                        <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-                <fileSet encoding="UTF-8">
-                    <directory>src/test/resources</directory>
-                    <includes>
-                        <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-            </fileSets>
-        </module>
-
     </modules>
-</archetype>
+</archetype-descriptor>

@@ -23,12 +23,12 @@
     </properties>
 
     <modules>
-        <module>idata-web</module>
-        <module>idata-service</module>
-        <module>idata-model</module>
-        <module>idata-jpa</module>
-        <module>idata-mybatis</module>
-        <module>idata-common</module>
+        <module>${rootArtifactId}-web</module>
+        <module>${rootArtifactId}-service</module>
+        <module>${rootArtifactId}-model</module>
+        <module>${rootArtifactId}-jpa</module>
+        <module>${rootArtifactId}-mybatis</module>
+        <module>${rootArtifactId}-common</module>
     </modules>
 
     <dependencies>
@@ -63,36 +63,36 @@
             <!--系统模块-->
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>idata-web</artifactId>
+                <artifactId>${rootArtifactId}-web</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>idata-common</artifactId>
+                <artifactId>${rootArtifactId}-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>idata-jpa</artifactId>
+                <artifactId>${rootArtifactId}-jpa</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>idata-mybatis</artifactId>
+                <artifactId>${rootArtifactId}-mybatis</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>idata-model</artifactId>
+                <artifactId>${rootArtifactId}-model</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>idata-service</artifactId>
+                <artifactId>${rootArtifactId}-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
