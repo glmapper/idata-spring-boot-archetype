@@ -1,8 +1,8 @@
-package ${groupId};
+package ${package};
 
-import ${groupId}.dao.jpa.UserRepository;
-import ${groupId}.dao.mybatis.UserMapper;
-import ${groupId}.model.entity.UserEntity;
+import ${package}.dao.jpa.UserRepository;
+import ${package}.dao.mybatis.UserMapper;
+import ${package}.model.entity.UserEntity;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

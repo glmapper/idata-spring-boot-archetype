@@ -1,4 +1,4 @@
-package ${groupId};
+package ${package};
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-@MapperScan(basePackages = "${groupId}.dao.mybatis")
+@MapperScan(basePackages = "${package}.dao.mybatis")
 public class Application {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);

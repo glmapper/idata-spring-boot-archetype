@@ -1,25 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archetype-descriptor name="idata-spring-boot-archetype"
-                      xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
-                      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                      xsi:schemaLocation="
-            http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0
-            http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd">
+<archetype-descriptor
+        xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0
+        http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
+        name="idata-spring-boot-archetype"
+        xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
+    <!-- rootArtifactId 是根 pom 的 artifactId-->
+
+    <fileSets>
+        <fileSet encoding="UTF-8">
+            <directory></directory>
+            <includes>
+                <include>README.md</include>
+                <include>.gitignore</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+    <!--属性变量定义-->
     <requiredProperties>
         <requiredProperty key="groupId">
-            <defaultValue>com.glmapper</defaultValue>
+            <defaultValue>com.cn.idata</defaultValue>
         </requiredProperty>
         <requiredProperty key="artifactId">
-            <defaultValue>test</defaultValue>
+            <defaultValue>idata-baselines</defaultValue>
         </requiredProperty>
         <requiredProperty key="package">
-            <defaultValue>com.glmapper</defaultValue>
+            <defaultValue>com.cn.idata</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="version">
+            <defaultValue>1.0.0</defaultValue>
         </requiredProperty>
     </requiredProperties>
 
     <modules>
-        <module id="${rootArtifactId}-common" name="${rootArtifactId}-common" dir="__${rootArtifactId}__-common">
+        <!--dir 的配置要注意不能 ${}，否则会抛出：MojoFailureException:
+         Error merging velocity templates: Unable to find resource 'archetype-resources/_xx_-xx/pom.xml'-->
+        <module id="${rootArtifactId}-common" name="${rootArtifactId}-common" dir="__rootArtifactId__-common">
             <fileSets>
                 <fileSet filtered="true" encoding="UTF-8" packaged="true">
                     <directory>src/main/java</directory>
@@ -47,7 +65,7 @@
                 </fileSet>
             </fileSets>
         </module>
-        <module id="${rootArtifactId}-model" name="${rootArtifactId}-model" dir="__${rootArtifactId}__-model">
+        <module id="${rootArtifactId}-model" name="${rootArtifactId}-model" dir="__rootArtifactId__-model">
             <fileSets>
                 <fileSet filtered="true" encoding="UTF-8" packaged="true">
                     <directory>src/main/java</directory>
@@ -75,7 +93,7 @@
                 </fileSet>
             </fileSets>
         </module>
-        <module id="${rootArtifactId}-jpa" name="${rootArtifactId}-jpa" dir="__${rootArtifactId}__-jpa">
+        <module id="${rootArtifactId}-jpa" name="${rootArtifactId}-jpa" dir="__rootArtifactId__-jpa">
             <fileSets>
                 <fileSet filtered="true" encoding="UTF-8" packaged="true">
                     <directory>src/main/java</directory>
@@ -104,7 +122,7 @@
                 </fileSet>
             </fileSets>
         </module>
-        <module id="${rootArtifactId}-mybatis" name="${rootArtifactId}-mybatis" dir="__${rootArtifactId}__-mybatis">
+        <module id="${rootArtifactId}-mybatis" name="${rootArtifactId}-mybatis" dir="__rootArtifactId__-mybatis">
             <fileSets>
                 <fileSet filtered="true" encoding="UTF-8" packaged="true">
                     <directory>src/main/java</directory>
@@ -144,7 +162,7 @@
                 </fileSet>
             </fileSets>
         </module>
-        <module id="${rootArtifactId}-service" name="${rootArtifactId}-service" dir="__${rootArtifactId}__-service">
+        <module id="${rootArtifactId}-service" name="${rootArtifactId}-service" dir="__rootArtifactId__-service">
             <fileSets>
                 <fileSet filtered="true" encoding="UTF-8" packaged="true">
                     <directory>src/main/java</directory>
@@ -172,7 +190,7 @@
                 </fileSet>
             </fileSets>
         </module>
-        <module id="${rootArtifactId}-web" name="${rootArtifactId}-web" dir="__${rootArtifactId}__-web">
+        <module id="${rootArtifactId}-web" name="${rootArtifactId}-web" dir="__rootArtifactId__-web">
             <fileSets>
                 <fileSet filtered="true" encoding="UTF-8" packaged="true">
                     <directory>src/main/java</directory>
