@@ -18,21 +18,19 @@
         </fileSet>
     </fileSets>
 
-    <!--属性变量定义-->
-    <requiredProperties>
-        <requiredProperty key="groupId">
-            <defaultValue>com.cn.idata</defaultValue>
-        </requiredProperty>
-        <requiredProperty key="artifactId">
-            <defaultValue>idata-baselines</defaultValue>
-        </requiredProperty>
-        <requiredProperty key="package">
-            <defaultValue>com.cn.idata</defaultValue>
-        </requiredProperty>
-        <requiredProperty key="version">
-            <defaultValue>1.0.0</defaultValue>
-        </requiredProperty>
-    </requiredProperties>
+<!--    &lt;!&ndash;属性变量定义&ndash;&gt;-->
+<!--    <requiredProperties>-->
+<!--        <requiredProperty key="groupId">-->
+<!--            <defaultValue>com.cn.idata</defaultValue>-->
+<!--        </requiredProperty>-->
+<!--        <requiredProperty key="artifactId">-->
+<!--        </requiredProperty>-->
+<!--        <requiredProperty key="package">-->
+<!--        </requiredProperty>-->
+<!--        <requiredProperty key="version">-->
+<!--            <defaultValue>1.0.0</defaultValue>-->
+<!--        </requiredProperty>-->
+<!--    </requiredProperties>-->
 
     <modules>
         <!--dir 的配置要注意不能 ${}，否则会抛出：MojoFailureException:
@@ -144,18 +142,6 @@
                 </fileSet>
                 <fileSet encoding="UTF-8">
                     <directory>src/test/resources</directory>
-                    <includes>
-                        <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-                <fileSet encoding="UTF-8">
-                    <directory>src/main/assembly</directory>
-                    <includes>
-                        <include>**/*.*</include>
-                    </includes>
-                </fileSet>
-                <fileSet encoding="UTF-8">
-                    <directory>src/main/bin</directory>
                     <includes>
                         <include>**/*.*</include>
                     </includes>
